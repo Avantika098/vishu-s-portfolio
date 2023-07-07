@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/cf8e096da9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <p class="logo">VIJAY PANDEY</p>
+            <ul>
+                <li><a href="#main">Home</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+        <div class="heading">
+            <p><h1>Hi I am <span id="name">VIJAY PANDEY</span></h1><h1>and I am a<br></h1></p>
+            <span id="element"></span>
+        </div>
+    </div>
+
+    <div id="about">
+        <p class="intro">About me</p>
+        <div class="section"> 
+            <div class="section1">
+                <div class="skills">skills
+                    <ul> 
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>JS</li>
+                     <li>Python</li>
+                     <li>PHP</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section2">
+                <div class="education">education
+                    <ul>
+                        <li><span>b.tech</span><br>IIIT Bhagalpur<br>2021-2025<br>Electronics and communication Engineering</li>
+                        <li><span>intermidiate</span><br>St. Theresa Sr. Sec. School, kathgodam<br>2021<br>97.2%</li>
+                        <li><span>high school</span><br>St. Theresa Sr. Sec. School, kathgodam<br>2019<br>94.6%</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section2">
+                <div class="acheivements">acheivements
+                    <ul>
+                        <li>TNP coordinator batch 2025.</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">see more</a>    
+    </div>
+   
+    <!-------------------------------------contact----------------------------------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">contact me</h1>
+                <p class="email"><i class="fa-solid fa-envelope"></i>vijay.2101161ec@iiitbh.ac.in</p>
+                <!--<p class="phno">903949837</p>-->
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/vijay__pandey___/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/VijayPandey0825"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/VijayPandey08"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+           
+            <div>
+                <a href="Vijay Pandey (1).pdf" class="btn btn2">Download cv</a>
+            </div>
+
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="your message"></textarea>
+                    <button type="submit" class="btn btn2">submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>copyright <i class="fa-regular fa-copyright"></i> Made by Vijay Pandey</p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+ <!-- Setup and start animation! -->
+ <script>
+    var typed = new Typed('#element', {
+      strings: ['WEB DEVELOPER', 'YOUTUBER','PROGRAMMER','UI DESIGNER','LEARNER'],
+      typeSpeed: 100,
+      backSpeed:100,
+      loop:true
+    });
+  </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwszSorlkPEjg41tHVyGPpokXRGtvxaIHk24ESo2WMBMs1G5VDeuER-pN_KQTxXIwIJDQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+     .then(response =>{
+          msg.innerHTML="message sent successfully"
+          setTimeout(function(){
+          msg.innerHTML=""
+          },5000)
+form.reset()
+})
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
